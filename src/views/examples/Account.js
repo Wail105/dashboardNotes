@@ -46,10 +46,9 @@ import {
     ModalFooter,
     CardBody,
   } from "reactstrap";
-  // core components
   import Header from "components/Headers/Header.js";
   import { useState } from "react";
-  import { FaEdit } from "react-icons/fa"; // Import the edit icon
+  import { FaEdit } from "react-icons/fa"; 
   
   const Account = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -89,7 +88,6 @@ import {
       { id: 2, ip: "192.168.1.2", timestamp: "2024-01-01 11:00 AM" },
     ];
   
-    // Search for a person by name or CIN
     const handleSearch = () => {
       const results = persons.filter(
         (person) =>
@@ -106,8 +104,8 @@ import {
     };
   
     const handleEditPerson = (person) => {
-      setSelectedUser(person); // Set the selected user for editing
-      setShowEditModal(true); // Open the edit modal
+      setSelectedUser(person); 
+      setShowEditModal(true); 
     };
   
     const generatePassword = () => {
@@ -125,19 +123,16 @@ import {
       const login = `${selectedPerson.firstName}${selectedPerson.lastName}`.toLowerCase();
       const password = generatePassword();
       setNewUser({ ...newUser, login, password });
-      // Hash the password and save to the database (not shown here)
       alert(`User created with login: ${login} and password: ${password}`);
       setShowUserForm(false);
     };
   
-    // Handle person creation
     const handleCreatePerson = () => {
       // Save the new person to the database
       alert(`Person created: ${newPerson.firstName} ${newPerson.lastName}`);
       setShowPersonForm(false);
     };
   
-    // Handle reset password
     const handleResetPassword = () => {
       const newPassword = generatePassword();
       alert(`Password reset to: ${newPassword}`);

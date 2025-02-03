@@ -1,15 +1,4 @@
-/*!
-=========================================================
-* Argon Dashboard React - v1.2.4
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2024 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-* Coded by Creative Tim
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-// reactstrap components
+
 import {
     Badge,
     Card,
@@ -34,7 +23,6 @@ import {
     Button,
     Alert,
 } from "reactstrap";
-  // core components
 import Header from "components/Headers/Header.js";
 import { useState } from "react";
 import * as XLSX from "xlsx";
@@ -55,7 +43,6 @@ const Tables = () => {
         const worksheet = workbook.Sheets[sheetName];
         const json = XLSX.utils.sheet_to_json(worksheet);
   
-        // Validate the file structure
         if (
           !json[0] ||
           !json[0]["ID ETUDIANT"] ||
@@ -69,7 +56,7 @@ const Tables = () => {
           return;
         }
   
-        // Perform additional validations here (e.g., check if students exist in the database)
+        // i will check i f students exist in data base
         setStudents(json);
         setError(null);
         setSuccess("Fichier téléchargé et validé avec succès.");
@@ -79,12 +66,10 @@ const Tables = () => {
     };
   
     const handleInscription = () => {
-      // Logic for handling new student enrollments
       setSuccess("Inscription des étudiants effectuée avec succès.");
     };
   
     const handleReinscription = () => {
-      // Logic for handling student re-enrollments
       setSuccess("Réinscription des étudiants effectuée avec succès.");
     };
   
