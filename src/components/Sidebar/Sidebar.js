@@ -121,7 +121,12 @@ const Sidebar = (props) => {
             <img
               alt={logo.imgAlt}
               className="navbar-brand-img"
-              src={logo.imgSrc}
+              src={require("../../assets/img/brand/université-ibn-tofail.png")}
+              style={{
+                width: "550px", // Adjust width as needed
+                height: "500px", // Maintain aspect ratio
+              }}
+
             />
           </NavbarBrand>
         ) : null}
