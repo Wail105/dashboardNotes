@@ -35,9 +35,14 @@ const AdminNavbar = () => {
       <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">
         <Container className="px-4">
           <NavbarBrand to="/" tag={Link}>
-            <img
-              alt="..."
-              src={require("../../assets/img/brand/argon-react-white.png")}
+          <img
+              className="navbar-brand-img"
+              src={require("../../assets/img/brand/université-ibn-tofail2.png")}
+              style={{
+                width: "180px", // Adjust width as needed
+                height: "35px", // Maintain aspect ratio
+              }}
+
             />
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
@@ -64,27 +69,12 @@ const AdminNavbar = () => {
             </div>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink className="nav-link-icon" to="/" tag={Link}>
+              <NavLink className="nav-link-icon" to="/" tag={Link}>
                   <i className="ni ni-planet" />
                   <span className="nav-link-inner--text">Dashboard</span>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  to="/auth/register"
-                  tag={Link}
-                >
-                  <i className="ni ni-circle-08" />
-                  <span className="nav-link-inner--text">Register</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link-icon" to="/auth/login" tag={Link}>
-                  <i className="ni ni-key-25" />
-                  <span className="nav-link-inner--text">Login</span>
-                </NavLink>
-              </NavItem>
+
               <NavItem>
                 <NavLink
                   className="nav-link-icon"
